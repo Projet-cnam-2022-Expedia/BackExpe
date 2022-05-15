@@ -7,7 +7,7 @@
 
   function GetVol(){
     global $conn;
-      $query = "SELECT DISTINCT nom_compagnie, ville_depart, ville_arrivee as 'nbescale' FROM `compagnies aériennes` NATURAL JOIN  vols LEFT JOIN escales ON vols.id_vol = escales.id_vol";
+      $query = "SELECT DISTINCT nom_compagnie, ville_depart, ville_arrivee FROM `compagnies aériennes` NATURAL JOIN  vols LEFT JOIN escales ON vols.id_vol = escales.id_vol";
       $stmt = $conn->prepare($query);
       $stmt->execute();
       $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
