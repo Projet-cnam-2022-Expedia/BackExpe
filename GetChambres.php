@@ -7,7 +7,7 @@ getVol();
 
 function GetVol(){
     global $conn;
-    $query = "SELECT* FROM hotels JOIN chambres_hotels on hotels.id = chambres_hotels.hotel_id JOIN chambres on chambres_hotels.chambre_id = chambres.id";
+    $query = "SELECT * FROM hotels JOIN chambres_hotels ON hotels.id = chambres_hotels.hotel_id JOIN chambres ON chambres_hotels.chambre_id = chambres.id";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
